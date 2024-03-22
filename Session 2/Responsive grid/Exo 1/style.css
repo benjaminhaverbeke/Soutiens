@@ -1,0 +1,21 @@
+/* < 640 */
+.grid-container {
+  padding: 1.25em;
+  display: grid;
+  grid-gap: 1.25em;
+  grid-auto-flow: dense;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  background: #ccc;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* 640 ~ 1023 */
+
+/* 1024+ */

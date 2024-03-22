@@ -1,0 +1,155 @@
+/***********général***********************/
+html {
+    font-size: 62.5%;
+}
+* {
+    box-sizing: border-box;
+}
+
+body * {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 0.5rem;
+    
+}
+body {
+    width: 1200px;
+    margin: auto;
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+}
+
+/**************header****************/
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-items: center;
+}
+
+.header div {
+    width: 20%;
+}
+.logo-site {
+    width: 10em;
+    
+    
+}
+.buy-now {
+    background-color: RGB(130, 180, 64);
+    color: white;
+    border-radius: 5px;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+/*********container******************/
+
+
+.container {
+    display: flex;
+
+    width: 100%;
+}
+.menu-left {
+    width: 20%;
+}
+.content {
+    width: 80%;
+}
+.content section {
+    margin-bottom: 2em;
+    padding: 1em;
+}
+
+/**************content***************/
+
+
+
+/***************section 1 fond*****************/
+
+.fond {
+   height: 25em;
+   overflow:hidden;
+   
+}
+.fond img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    
+    
+}
+
+
+
+
+
+/***********section 2 greatest***************/
+
+
+.greatest {
+    display: flex;
+    column-gap: 1em;
+    
+}
+.greatest > div {
+    width: 33%;
+    
+}
+
+.greatest img {
+    width: 100%;
+    height: auto;
+}
+.greatest h3 {
+    background-color: RGB(208, 135, 71);
+    color: white;
+}
+.greatest div {
+    text-align: center;
+    padding: 0;
+}
+.greatest p {
+    margin: 0;
+}
+/*********section 3 new-products******************/
+.new-products {
+    padding: 1em;
+}
+.new-products h3 {
+    text-align: center;
+}
+.card {
+    display: flex;
+}
+
+/***************section 4 items-list*************/
+
+.items-list {
+    display: flex;
+}
+.items-list > div {
+    flex-basis: 25%;
+}
+
+
+
+
+
+/******************footer******************/
+
+.footer {
+    display: flex;
+    
+}
+.footer > section{
+    flex-basis: 25%;
+    text-align: center;
+}
