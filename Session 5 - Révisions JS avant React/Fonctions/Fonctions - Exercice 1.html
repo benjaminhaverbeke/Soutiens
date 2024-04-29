@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+</head>
+<body>
+    <button class="js-button">ClicMe</button>
+    <script type="text/javascript">
+        /*
+            1. Ecrire une fonction createParagraph qui prend en paramètre une chaine de caractères "content"
+            et qui retourne un élément HTML de type <p> avec le contenu de "content" à l'intérieur.
+
+            2. Au clic sur le bouton
+            - Appeler la fonction createParagraph en lui passant "Plop !" en paramètre.
+            - Ajouter l'élément retourné par la fonction au DOM
+        */
+        
+        function createParagraph(content){
+            
+            const p = document.createElement('p');
+            document.body.appendChild(p);
+            return p.innerText = content;
+            
+        }
+        
+        document.addEventListener('DOMContentLoaded', function(){
+            
+            const click = document.querySelector('.js-button');
+            
+            click.addEventListener('click', function(){
+                
+                
+                createParagraph('plop !');
+                
+                
+                
+            });
+            
+            
+            
+            
+        });
+        
+        
+    </script>
+</body>
+</html>

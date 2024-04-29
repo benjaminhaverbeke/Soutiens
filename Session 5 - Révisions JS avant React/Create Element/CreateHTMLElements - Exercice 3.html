@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            Soit le tableau suivant : ['kiwi', 'banane', 'fruit de la passion', 'framboise']
+            Comme montré sur la maquette :
+            - Créer une liste HTML contenant chacun des éléments.
+            - Ajouter la liste au DOM.
+        */
+        
+        
+        document.addEventListener('DOMContentLoaded', function(){
+            
+            let tab = ['kiwi', 'banane', 'fruit de la passion', 'framboise'];
+            let list = document.createElement('ul')
+            document.body.appendChild(list);
+            tab.forEach((element) => {
+                
+               let elementList = document.createElement('li');
+               list.appendChild(elementList);
+               elementList.innerText = element;
+                
+            });
+            
+            
+            
+        });
+    </script>
+</body>
+</html>

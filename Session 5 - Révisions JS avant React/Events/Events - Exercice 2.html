@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+    <style>
+        p {
+            display: none;
+        }
+        button {
+            display: block;
+        }
+        .visible {
+            display: initial;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.fr" class="js-link">Clic me</a>
+    <p class="js-paragraph"></p>
+    <script type="text/javascript">
+        /*
+            Au clic sur le lien, écrire le mot "Bienvenue" dans le paragraphe
+        */
+        document.addEventListener('DOMContentLoaded', function(){
+            
+            
+            let lien = document.querySelector('.js-link');
+            let para = document.querySelector('.js-paragraph');
+            
+            lien.addEventListener('click', function(){
+                event.preventDefault();
+                para.classList.toggle('visible');    
+               para.innerHTML = 'Bienvenue'; 
+                
+                
+                
+            });
+            
+            
+        });
+        
+        
+    </script>
+</body>
+</html>
