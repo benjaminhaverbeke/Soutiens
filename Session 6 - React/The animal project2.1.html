@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <!-- babel => compilation du JSX -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    
+    
+    const Animal = ({nom, cri}) => {
+        
+        const [hasClicked, setHasClicked] = React.useState(false);
+        
+        const handleClick = () => {
+            
+            setHasClicked(!hasClicked);
+            
+        }
+        
+        
+        
+        return (
+            <div className={nom}>
+            <p>{nom}</p>
+            <button onClick={handleClick}>Cri</button>
+            {
+                hasClicked && (
+                    <p>{cri}</p> 
+                    )
+               
+            }
+           
+            </div>
+            
+            );
+        
+    }
+    const AnimalSup = () => {
+        
+        
+        return(
+            
+            <button onClick={()=>{
+                setAnimals(
+                    animals.filter(a => a.nom !== animal.nom)
+                    )
+            }}>Supprimer</button>
+            )
+        
+        
+        
+    }
+    
+    const AnimalList = () => {
+        
+        const [animals, setAnimals] = React.useState([
+            {
+        nom: "Chat",
+        cri: "Miaou"
+    },{
+        nom: "Chien",
+        cri: "Woaf"
+    },{
+        nom: "Canari",
+        cri: "Cui cui"
+    }
+            ]);
+        
+        const ajoutAnimal = () => {
+            
+            setAnimals([
+                ...animals, 
+                {nom: nameInput, cri: criInput }
+                ]);
+            
+            
+           setNameInput('');
+            setCriInput('');
+            
+             
+        }
+        
+    
+    
+        const [nameInput, setNameInput] = React.useState('');
+        const nameChange = (event) => {
+            
+            setNameInput(event.target.value)
+            
+        }
+        
+        const [criInput, setCriInput] = React.useState('');
+        const criChange = (event) => {
+            
+            setCriInput(event.target.value)
+            
+        }
+        
+      
+         
+        
+        
+        return (
+            <div>
+            <h2>Ajouter un animal</h2>
+            <input 
+            type="text" 
+            placeholder="nom" 
+            id="name"
+            value={nameInput}
+            onChange={nameChange}
+            />
+            <input 
+            type="text"
+            placeholder="cri" 
+            id="cri"
+            value={criInput}
+            onChange={criChange}
+            />
+            <button onClick={ajoutAnimal}>Ajout</button>
+            <ul>
+            {animals.map((animal, i) =>(<div key={i}><Animal nom={animal.nom} cri={animal.cri}/><AnimalSup />
+            </div>
+            ))}
+            
+            </ul>
+            </div>
+            
+            );
+        
+    }
+    
+
+    
+    
+    
+ReactDOM.render(
+            <AnimalList />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
