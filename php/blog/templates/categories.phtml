@@ -1,0 +1,39 @@
+<?php $param = $_GET['param']; 
+
+$category = $posts[$param];
+
+
+?>
+
+
+<main id="home" class="p-3">
+    
+    
+    <h1 class="text-center m-5"><?= ucfirst($param) ?></h1>
+        
+        
+        <ul class="row p-0">
+            <?php foreach($category as $category_item){  ?>
+            <li class="col-4 my-3">
+                <article class="card">
+                    <header class="card-header p-0">
+                        <img src="https://picsum.photos/id/1/550/250" class="card-img-top" alt="" />
+                        <h3 class="card-title px-2 py-3">
+                            <?= $category_item["title"] ?>
+                        </h3>
+                    </header>
+                    <section class="card-body p-2">
+                        <p class="card-text">
+                            <?= $category_item["excerpt"] ?>
+                        </p>
+                    </section>
+                    <footer class="p-2">
+                        <a href="#" class="btn btn-primary">Lire l'article</a>
+                    </footer>
+                </article>
+            </li>
+            
+            <?php } ?>
+           
+        </ul>
+</main>
